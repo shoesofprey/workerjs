@@ -27,6 +27,9 @@ function Worker(file, type) {
   this.child.on('error', function (err) {
     self.onerror && self.onerror(err);
   });
+  this.child.on('exit', function (code, signal) {
+    self.onexit && self.onexit(code, signal);
+  })
 }
 
 Worker.prototype.postMessage = function (msg) {
@@ -43,10 +46,15 @@ Worker.prototype.onmessage = function () {
 Worker.prototype.onerror = function () {
 };
 
+Worker.prototype.onexit = function () {
+};
+
 Worker.prototype.addEventListener = function (eventName, cb) {
   if (eventName === 'message') {
     this.onmessage = cb;
   } else if (eventName === 'error') {
     this.onerror = cb;
+  } else if (eventName === 'exit') {
+    this.onexit = cb;
   }
 };
