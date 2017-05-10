@@ -2,14 +2,17 @@
 
 Server Web Workers for node.js that work.
 
-[![build status](https://secure.travis-ci.org/eugeneware/workerjs.png)](http://travis-ci.org/eugeneware/workerjs)
+This is a modified version of the [workerjs](https://github.com/eugeneware/workerjs) library that
+handles events specific to the child_process in node.js.
+
+[![build status](https://secure.travis-ci.org/shoesofprey/workerjs-node.png)](http://travis-ci.org/shoesofprey/workerjs-node)
 
 ## Installation
 
 This module is installed via npm:
 
 ``` bash
-$ npm install workerjs
+$ npm install workerjs-node
 ```
 
 ## Background
